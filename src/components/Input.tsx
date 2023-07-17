@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import magnifier from '../assets/icons/magnifier.svg'
 
 interface InputType {
@@ -23,6 +23,20 @@ export function Input({ label, type, placeholder, icon, value, onChange }: Input
         }
     })
     
+    useEffect(() => {
+        setMaxLength(() => {
+            if(label === "CVC") {
+                return 3
+            }
+            if(label === "Credit-Card") {
+                return 19
+            }
+            if(label === "Validade") {
+                return 5
+            }
+        })
+    })
+
     return (
         <div className={`flex flex-col text-left ${placeholder === 'Busque por pratos ou ingredientes' ? 'gap-0' : 'gap-2'}`}>
             <label 
