@@ -69,11 +69,7 @@ export const PaymentOptions = ({ pay, emptyOder  }: IPayment) => {
             }
             setCVV('')
             setCard('')
-            setValidity('')                      
-               
-            if(screenWidth < maxScreenSize) {
-                window.location.replace('/orderconfirmation')
-            }
+            setValidity('') 
         } else {
             setMsg('O pedido está vazio')
         }
