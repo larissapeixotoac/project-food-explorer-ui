@@ -67,7 +67,7 @@ export function Home() {
 
                     <div>
                         <div className="flex flex-col mb-[3.9rem] ">
-                            <div className='flex flex-col pb-5 pr-5 items-end justify-end gap-1 min-w-[23.5rem] h-32 ml-9 relative bg-gradient-to-b from-gradient_200-0 to-gradient_200-1 mt-40 mr-4 md:mx-16 md:h-40 lg:h-60 md:pr-16 md:justify-center md:pb-0 lg:mt-52 xl:mx-32 xl:mt-64 xl:h-[16.5rem] xl:pr-[7rem] 2xl:items-center 2xl: 2xl:pr-0 2xl:pl-96 
+                            <div className='flex flex-col pb-5 pr-5 items-end justify-end gap-1 min-w-[full] h-32 ml-9 relative bg-gradient-to-b from-gradient_200-0 to-gradient_200-1 mt-40 mr-4 md:mx-16 md:h-40 lg:h-60 md:pr-16 md:justify-center md:pb-0 lg:mt-52 xl:mx-32 xl:mt-64 xl:h-[16.5rem] xl:pr-[7rem] 2xl:items-center 2xl: 2xl:pr-0 2xl:pl-96 
                             '>
                                 <img
                                     src={ScreenWidth() >= 768 ? bigMacarons : macarons}
