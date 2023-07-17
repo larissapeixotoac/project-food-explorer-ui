@@ -15,3 +15,48 @@ O administrador possui a capacidade de adicionar novos pratos, editar os já exi
 - TypeScript
 - tailwindcss (lib)
 - axios (lib)
+
+## Execução
+
+Clone the project
+
+```bash
+  git clone git@github.com:larissapeixotoac/project-food-explorer-ui.git
+```
+
+Go to the project directory
+
+```bash
+  cd food-explorer-ui
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev  
+```
+The server will initialize with Vite, in http://localhost:5173/. 
+
+#### Para rodar sua própria versão da api, altere o arquivo api.tsx localizando em na pasta services.
+
+
+
+
+## Preview
+
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/fb7cdc97-e825-42c6-b77d-b27acb305869)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/5ca3f416-c167-4640-9375-2bc0784bdb10)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/b5870f89-3c1f-45ab-8eb6-2b477cb8b9ec) ![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/cc42d419-c519-4b56-ade3-de3bb7baf349)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/8a31182b-7600-4ba8-94ef-6a55beaac56e)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/28e53252-f14c-42f0-ad05-038874d56227)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/386b32ae-707f-47e9-9a31-4181f1f18b5c)
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/d9b0640f-d0ce-459c-a6f7-1ce4c881ccb1)
+
+
+
