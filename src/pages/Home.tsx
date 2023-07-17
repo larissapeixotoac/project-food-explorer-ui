@@ -71,7 +71,7 @@ export function Home() {
                             '>
                                 <img
                                     src={ScreenWidth() >= 768 ? bigMacarons : macarons}
-                                    alt="" className='absolute bottom-0 -left-7 md:w-72 lg:w-[30rem] lg:-left-14 xl:w-[39.5rem]'
+                                    alt="" className='absolute bottom-0 w-[11.5rem] -left-7 md:w-72 lg:w-[30rem] lg:-left-14 xl:w-[39.5rem]'
                                     />
                                 <h2 className='w-52 font-medium text-lg leading-6 text-LIGHT_300 md:text-3xl md:w-80 lg:text-[2.5rem] lg:w-[26.5rem] 2xl:text-6xl 2xl:w-[40rem] '>Sabores inigualáveis</h2>
                                 <p className=' w-52 text-xs text-LIGHT_300 font-light md:font-ff-secundary md:w-80 lg:text-base lg:w-[26.5rem] 2xl:text-xl 2xl:w-[33rem]'>Sinta o cuidado do preparo com ingredientes selecionados.</p>
