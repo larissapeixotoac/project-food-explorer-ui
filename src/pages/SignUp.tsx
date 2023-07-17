@@ -88,7 +88,7 @@ export function SignUp() {
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)}
                     />
                 </form>
-                <div className='mb-8'>
+                <div className='mb-8 flex'>
                     <Button
                         label='Criar conta'
                         updateDish={false}
