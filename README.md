@@ -15,3 +15,5 @@ O administrador possui a capacidade de adicionar novos pratos, editar os já exi
 - TypeScript
 - tailwindcss (lib)
 - axios (lib)
+
+![image](https://github.com/larissapeixotoac/project-food-explorer-ui/assets/115260502/344182a2-e51c-410e-bf18-cc1e2515eccb)
