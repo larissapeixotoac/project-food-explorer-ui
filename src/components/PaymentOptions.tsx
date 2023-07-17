@@ -23,9 +23,6 @@ export const PaymentOptions = ({ pay, emptyOder  }: IPayment) => {
     const [msg, setMsg] = useState('test')
     const [modalState, setModalState] = useState(false)
 
-    const screenWidth = ScreenWidth()
-    const maxScreenSize = 1024
-
     async function handleFinalizeOrder(event: React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault()
         const cleanedNumber = card.replace(/\D/g, '');
