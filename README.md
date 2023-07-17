@@ -41,7 +41,7 @@ Start the server
 ```bash
   npm run dev  
 ```
-The server will initialize with Vite, in http://localhost:5173/. 
+The server will initialize with Vite, in http://localhost:5173
 
 #### Para rodar sua própria versão da api, altere o arquivo api.tsx localizando em na pasta services.
 
