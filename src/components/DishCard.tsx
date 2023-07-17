@@ -20,7 +20,7 @@ import fullHeart from '../assets/icons/fullHeart.svg'
 
 export function DishCard({ dish }: { dish: Dish }) {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [favorites, setFavorites] = useState(false)
     const [isFavorites, setIsFavorites] = useState(heart)
     const [quantity, setQuantity] = useState(1)
@@ -103,15 +103,15 @@ export function DishCard({ dish }: { dish: Dish }) {
     return (
         <div         
             className={` w-[13.15rem] flex flex-col mr-4 bg-DARK_200 border rounded-lg border-DARK_300 relative md:w-64 lg:w-[19rem] lg:h-[30rem]            
-            ${isAdmin ? 'py-14 px-6 h-[19.4rem]' : 'p-6 h-80'}`}            
+            ${(user?.isAdmin === '0' ? false : true) ? 'py-14 px-6 h-[19.4rem]' : 'p-6 h-80'}`}            
         >
             <button 
-                onClick={isAdmin ? handleEditButton : handleFavoriteButton}
+                onClick={(user?.isAdmin === '0' ? false : true) ? handleEditButton : handleFavoriteButton}
                 className='absolute top-4 right-4 z-50'
             >
                 <img 
-                    src={isAdmin ? pencil : isFavorites} 
-                    alt={isAdmin ? 'editar' : 'coração'}
+                    src={(user?.isAdmin === '0' ? false : true) ? pencil : isFavorites} 
+                    alt={(user?.isAdmin === '0' ? false : true) ? 'editar' : 'coração'}
                 />
             </button>
 
@@ -137,7 +137,7 @@ export function DishCard({ dish }: { dish: Dish }) {
                     {newPrice}                    
                 </p>
 
-                <div className={`${isAdmin ? 'hidden' : 'flex flex-col gap-4 w-full lg:flex-row'}`}>
+                <div className={`${(user?.isAdmin === '0' ? false : true) ? 'hidden' : 'flex flex-col gap-4 w-full lg:flex-row'}`}>
                     <div className='flex justify-center'>
                         <div className={`py-1 flex items-center gap-[0.88rem] `}>
                             <button 
@@ -158,7 +158,7 @@ export function DishCard({ dish }: { dish: Dish }) {
                     <div className='flex-grow'>
                         <ButtonDishCard
                             label='incluir'
-                            isAdmin={isAdmin}
+                            isAdmin={user?.isAdmin === '0' ? false : true}
                             details={false}
                             dish_id={dish.id}
                             quantity={quantity}

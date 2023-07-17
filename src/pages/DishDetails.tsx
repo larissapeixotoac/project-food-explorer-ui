@@ -42,7 +42,7 @@ const FavoriteButton = (props: IFavButton) => {
 
 export const DishDetails = () => {    
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
     const [dish, setDish] = useState({} as Dish)
     const [ingredients, setIngredients] = useState<DataIngredients[]>([])
@@ -127,7 +127,7 @@ export const DishDetails = () => {
             <RefreshOpenOrderContext.Provider value={{refresh, setRefresh}}>
                 <ModalAddDishContext.Provider value={{modalAddItem, setModalAddItem}}>
                     <Nav            
-                        isAdmin={isAdmin}
+                        isAdmin={user?.isAdmin === '0' ? false : true}
                         value={search}
                         onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                         handleKeyDown={handleKeyDown}

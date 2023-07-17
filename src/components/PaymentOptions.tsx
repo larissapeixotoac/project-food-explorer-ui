@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Input } from './Input'
 import { ScreenWidth } from '../components/ScreenWidth'
@@ -10,7 +10,6 @@ import { finalizeOrder } from '../services/order'
 import { Modal } from './Modal'
 
 import close from '../assets/icons/close.svg'
-import { RefreshOpenOrderContext } from '../hooks/RefreshOpenOrderContextProps'
 
 interface IPayment  { 
     pay: string,

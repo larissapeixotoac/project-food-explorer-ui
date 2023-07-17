@@ -13,7 +13,7 @@ import close from '../assets/icons/close.svg'
 
 export const NewDish = () => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
@@ -83,7 +83,7 @@ export const NewDish = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Nav
-                isAdmin={isAdmin}
+                isAdmin={user?.isAdmin === '0' ? false : true}
                 value={search}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                 handleKeyDown={handleKeyDown}

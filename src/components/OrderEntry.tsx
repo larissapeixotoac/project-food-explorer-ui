@@ -10,7 +10,7 @@ import { IOrders } from '../services/models/order'
 
 export const OrderEntry = ({ isAdmin }: AdminType) => {    
     const [orders, setOrders] = useState<IOrders[]>()
-    const [state, setState] = useState(false) 
+    // const [state, setState] = useState(false) 
 
     useEffect(() => {
         async function ClosedOrder() {

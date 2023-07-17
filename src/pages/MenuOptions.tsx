@@ -12,7 +12,7 @@ import close from '../assets/icons/close.svg'
 
 export function MenuOptions() {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
 
     const navigate = useNavigate()
@@ -60,7 +60,7 @@ export function MenuOptions() {
                 </div>
 
                 {
-                    isAdmin &&
+                    (user?.isAdmin === '0' ? false : true) &&
                     <div className=' border-b border-b-DARK_MIL p-[0.65rem]'>
                         <TextButton
                             label='Novo prato'

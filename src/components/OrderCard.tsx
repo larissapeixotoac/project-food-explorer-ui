@@ -50,7 +50,6 @@ const PcOrderCards = ({ isAdmin, order }: OrderCardType) => {
     const [fixingDate, setFixingDate] = useState(() => {
         const rightDate = order.updated_at.split(' ')
         const day = rightDate[0].split('-')
-        const year = day[0].split('')
         const time = rightDate[1].split(':')
         return `${day[2]}/${day[1]} às ${time[0]}h${time[1]}`
     })
@@ -128,6 +127,18 @@ const PcOrderCards = ({ isAdmin, order }: OrderCardType) => {
             }
         }
         AllDishes()
+
+        setFixingCode(() => {
+            const rightCode = order.id.toPrecision(7).split('.')
+            return `${rightCode[1]}${rightCode[0]}`
+        })
+
+        setFixingDate(() => {
+            const rightDate = order.updated_at.split(' ')
+            const day = rightDate[0].split('-')
+            const time = rightDate[1].split(':')
+            return `${day[2]}/${day[1]} às ${time[0]}h${time[1]}`
+        })
     },[])
 
     useEffect(() => {
@@ -240,7 +251,6 @@ const OrderCard = ({ isAdmin, order }: OrderCardType) => {
     const [fixingDate, setFixingDate] = useState(() => {
         const rightDate = order.updated_at.split(' ')
         const day = rightDate[0].split('-')
-        const year = day[0].split('')
         const time = rightDate[1].split(':')
         return `${day[2]}/${day[1]} às ${time[0]}h${time[1]}`
     })
@@ -316,6 +326,18 @@ const OrderCard = ({ isAdmin, order }: OrderCardType) => {
             }
         }
         AllDishes()
+
+        setFixingCode(() => {
+            const rightCode = order.id.toPrecision(7).split('.')
+            return `${rightCode[1]}${rightCode[0]}`
+        })
+
+        setFixingDate(() => {
+            const rightDate = order.updated_at.split(' ')
+            const day = rightDate[0].split('-')
+            const time = rightDate[1].split(':')
+            return `${day[2]}/${day[1]} às ${time[0]}h${time[1]}`
+        })
     },[])
 
     useEffect(() => {

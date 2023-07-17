@@ -17,7 +17,7 @@ import close from '../assets/icons/close.svg'
 export const EditDish = () => {    
     const params = useParams()
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
     const [constroller, setController] = useState(0)
     const [dishConstroller, setDishController] = useState(0)
@@ -138,7 +138,7 @@ export const EditDish = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Nav
-                isAdmin={isAdmin}
+                isAdmin={user?.isAdmin === '0' ? false : true}
                 value={search}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                 handleKeyDown={handleKeyDown}

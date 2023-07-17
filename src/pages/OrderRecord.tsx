@@ -13,7 +13,7 @@ import { handleKeyDown } from '../components/HandleSearchKeyDown'
 
 export const OrderRecord = () => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
     const [refresh, setRefresh] = useState(false)
     const [disable, setDisable] = useState(false)
@@ -24,7 +24,7 @@ export const OrderRecord = () => {
         <div className='flex flex-col min-h-screen '>
             <RefreshOpenOrderContext.Provider value={{refresh, setRefresh}}>
                 <Nav
-                    isAdmin={isAdmin}
+                    isAdmin={user?.isAdmin === '0' ? false : true}
                     value={search}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                     handleKeyDown={handleKeyDown}

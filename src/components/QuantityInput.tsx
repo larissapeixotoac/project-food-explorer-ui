@@ -17,13 +17,13 @@ interface IQntInput {
 
 export const QuantityInput = ({ details, price, dish_id }: IQntInput) => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [quantity, setQuantity] = useState(1)
     const [newPrice, setNewPrice] = useState('')
 
     const [detailsAdminPage, setDetailsAdminPage] = useState(() => {
         let result
-        if(isAdmin && details) {
+        if((user?.isAdmin === '0' ? false : true) && details) {
             result = true 
         } else {
             result = false
@@ -44,13 +44,25 @@ export const QuantityInput = ({ details, price, dish_id }: IQntInput) => {
             setNewPrice(result)  
         }
     }, [quantity, price])
+
+    useEffect(() => {
+        setDetailsAdminPage(() => {
+            let result
+            if((user?.isAdmin === '0' ? false : true) && details) {
+                result = true 
+            } else {
+                result = false
+            }
+            return result
+        })
+    },[])
     
     return (
         <div className={`flex justify-center gap-4 md:w-80 md:mx-auto md:gap-6 lg:mx-0 lg:justify-between lg:w-72 lg:gap-8
             ${detailsAdminPage && ' justify-center'}
         `}>
             <div className={`flex items-center gap-[0.88rem] 
-                ${isAdmin && 'hidden'} 
+                ${(user?.isAdmin === '0' ? false : true) && 'hidden'} 
                 ${details && 'gap-4'}
             `}>
                 <button
@@ -77,10 +89,10 @@ export const QuantityInput = ({ details, price, dish_id }: IQntInput) => {
                 </button>
             </div>
 
-            <div className={`${isAdmin ? '': 'lg:flex-grow'}`}>
+            <div className={`${(user?.isAdmin === '0' ? false : true) ? '': 'lg:flex-grow'}`}>
                 <ButtonDishCard
                     label={`pedir ∙ ${newPrice}`}
-                    isAdmin={isAdmin}
+                    isAdmin={user?.isAdmin === '0' ? false : true}
                     details={details}
                     dish_id={dish_id}
                     quantity={quantity} 

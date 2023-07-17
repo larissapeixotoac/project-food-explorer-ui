@@ -12,7 +12,7 @@ import { ScreenWidth } from '../components/ScreenWidth'
 
 export const PaymentPage = () => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)    
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)    
     const [refresh, setRefresh] = useState(false)
     const [disable, setDisable] = useState(false)
     const params = useParams()
@@ -40,7 +40,7 @@ export const PaymentPage = () => {
         <div className='flex flex-col min-h-screen'>
             <RefreshOpenOrderContext.Provider value={{refresh, setRefresh}}>
             <Nav
-                isAdmin={isAdmin}
+                isAdmin={user?.isAdmin === '0' ? false : true}
                 value={''}
                 onChange={() => {}}
                 handleKeyDown={() => {}}

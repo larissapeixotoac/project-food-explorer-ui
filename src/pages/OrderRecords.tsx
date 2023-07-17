@@ -9,13 +9,13 @@ import { handleKeyDown } from '../components/HandleSearchKeyDown'
 
 export const OrderRecords = () => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')    
 
     return (
         <div className="flex flex-col min-h-screen relative">
             <Nav
-                isAdmin={isAdmin}    
+                isAdmin={user?.isAdmin === '0' ? false : true}    
                 value={search}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                 handleKeyDown={handleKeyDown}
@@ -30,7 +30,7 @@ export const OrderRecords = () => {
                 </h1>
                
                 <OrderEntry
-                    isAdmin={isAdmin}
+                    isAdmin={user?.isAdmin === '0' ? false : true}
                 />
                 
             </div>          

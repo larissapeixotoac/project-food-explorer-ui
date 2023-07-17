@@ -19,7 +19,7 @@ interface FavoritesType {
 
 export const Favorites = () => {
     const { user } = useAuth()
-    const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
+    // const [isAdmin, setIsAdmin] = useState(user?.isAdmin === '0' ? false : true)
     const [search, setSearch] = useState('')
     const [favorites, setFavorites] = useState<FavoritesType[]>([])
     const [dishes, setDishes] = useState<Dish[]>([])
@@ -61,7 +61,7 @@ export const Favorites = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Nav
-                isAdmin={isAdmin}
+                isAdmin={user?.isAdmin === '0' ? false : true}
                 value={search}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
                 handleKeyDown={handleKeyDown}
