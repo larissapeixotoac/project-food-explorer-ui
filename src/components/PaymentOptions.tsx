@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import { Input } from './Input'
-import { ScreenWidth } from '../components/ScreenWidth'
-
 
 import qrcode from '../assets/QRcode.svg'
 import receipt from '../assets/icons/receipt.svg'
