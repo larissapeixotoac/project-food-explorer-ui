@@ -11,7 +11,7 @@ O administrador possui a capacidade de adicionar novos pratos, editar os já exi
 
 
 ## Tecnologias e Principais bibliotecas
-- React.js 
+- React 
 - TypeScript
 - tailwindcss (lib)
 - axios (lib)
